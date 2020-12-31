@@ -21,6 +21,23 @@ export default class User {
     } catch (error) {
       throw error;
     }
+  }
+
+  /**
+   * @param {string} googleId - The user googleId name
+   * @returns {object} - An instance of the Users model class
+   */
+  static async googleUserExist(googleId) {
+    try {
+      const usernameExist = await database.Users.findOne({
+        where: {
+          googleId
+        }
+      });
+      return usernameExist;
+    } catch (error) {
+      throw error;
+    }
   } /**
    * @param {string} id - The user id
    * @returns {object} - An instance of the Users model class
