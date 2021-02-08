@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-    },googleId: {
+    },
+    googleId: {
       type: DataTypes.STRING,
       allowNull: true,
       unique: true,
@@ -31,5 +32,19 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: true,
     },
   });
+  User.associate = models => {
+    User.hasMany(models.Purchases, {
+      as: "purchases",
+      foreignKey: "userId",
+      onDelete: "cascade",
+      hooks: true,
+    });
+    User.hasMany(models.PaymentHistories, {
+      as: "userHistory",
+      foreignKey: "userId",
+      onDelete: "cascade",
+      hooks: true,
+    });
+  };
   return User;
 };

@@ -1,7 +1,8 @@
-/* eslint-disable require-jsdoc */
 module.exports = {
   up(queryInterface, Sequelize) {
-    return queryInterface.sequelize.query("CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";").then(() => queryInterface.createTable("Users", {
+    return queryInterface.sequelize.query
+    ("CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";")
+    .then(() => queryInterface.createTable("Users", {
       id: {
         allowNull: false,
         primaryKey: true,
@@ -19,6 +20,7 @@ module.exports = {
       },
       googleId: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       role: {
         type: Sequelize.ENUM("Super Admin", "Admin", "User"),

@@ -61,7 +61,13 @@ export default class User {
    */
   static async getAllUsers() {
     try {
-      return await database.Users.findAll({ });
+      //
+      return await database.Users.findAll({
+        include: [
+          { model: database.Purchases, as: "purchases" },
+          { model: database.PaymentHistories, as: "userHistory" }
+        ]
+      });
     } catch (err) {
       throw err;
     }

@@ -1,39 +1,36 @@
-/* eslint-disable require-jsdoc */
 module.exports = {
   up(queryInterface, Sequelize) {
     return queryInterface.sequelize.query("CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";")
-    .then(() => queryInterface.createTable("Profiles", {
+    .then(() => queryInterface.createTable("Weeds", {
       id: {
         allowNull: false,
         primaryKey: true,
         type: Sequelize.UUID,
         defaultValue: Sequelize.literal("uuid_generate_v4()"),
       },
-      userId: {
+      name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      firstName: {
-        type: Sequelize.STRING,
+      pricePerQty: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
-      lastName: {
+      imageUrl: {
         type: Sequelize.STRING,
-      },
-      profilePicture: {
-        type: Sequelize.STRING,
-      },
-      phoneNo: {
-        type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-      },
+        type: Sequelize.DATE
+      }
     }));
-  },
-  down: queryInterface => queryInterface.dropTable("Profiles"),
+    },
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('Weeds');
+  }
 };
