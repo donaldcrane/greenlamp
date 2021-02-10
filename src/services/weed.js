@@ -37,8 +37,7 @@ export default class Admin {
    */
   static async getAllWeeds() {
     try {
-      return await database.Weeds.findAll({
-      });
+      return await database.Weeds.findAll({ });
     } catch (err) {
       throw err;
     }

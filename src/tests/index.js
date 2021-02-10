@@ -1,0 +1,10 @@
+import "./index-test";
+import "./models/user.spec";
+import "./models/profile.spec";
+import "./models/weed.spec";
+import "./models/purchase.spec";
+import "./models/paymenthistory.spec";
+import "./controllers/user-sign-up.test";
+import "./controllers/user-sign-in.test";
+import "./controllers/activate-user.test";
+import "./controllers/deactivate-user.test";

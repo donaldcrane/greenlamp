@@ -112,14 +112,15 @@ export default class AdminWeedController {
       const {
         name, imageUrl, pricePerQty
       } = req.body;
-      const weed = await Admin.getweed(id);
+      console.log(req.body);
+      const weed = await Admin.getWeed(id);
       if (!weed) return res.status(404).json({ status: 404, error: "weed not found" });
       let newname;
       if (name) {
         newname = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
         req.body.name = newname;
       }
-      const newWeed = await Admin.updateweed(id, req.body);
+      const newWeed = await Admin.updateWeed(id, req.body);
       return res.status(200).json({
         status: 200,
         message: "Successfully updated weed",

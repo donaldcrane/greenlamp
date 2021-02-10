@@ -36,7 +36,7 @@ export default class AdminPaymentHistoryController {
       const { error } = validateId({ id });
       if (error) return res.status(400).json({ status: 400, error: error.message });
       const paymentHistory = await Admin.getPaymentHistory(id);
-      if (!weed) return res.status(404).json({ status: 404, error: "Payment History not found" });
+      if (!paymentHistory) return res.status(404).json({ status: 404, error: "Payment History not found" });
       return res.status(200).json({
         status: 200,
         message: "Successfully retrived payment History",

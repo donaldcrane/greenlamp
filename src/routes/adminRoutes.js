@@ -6,7 +6,7 @@ const router = Router();
 const { ActivateUser, DeActivateUser } = AdminController;
 const { verifyToken, verifyAdmin } = Authentication;
 
-router.put("/admin/activate-user/:id", verifyToken, verifyAdmin, ActivateUser);
-router.put("/admin/deactivate-user/:id", verifyToken, verifyAdmin, DeActivateUser);
+router.patch("/admin/activate-user/:id", verifyToken, verifyAdmin, ActivateUser);
+router.patch("/admin/deactivate-user/:id", verifyToken, verifyAdmin, DeActivateUser);
 
 export default router;

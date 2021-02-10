@@ -39,8 +39,7 @@ export default class UserController {
       await sendGrid.sendVerificationEmail(Email, username, "users/signup");
       return res.status(201).json({
         status: 201,
-        message: "User created successfully",
-        data: "User created! An email has been sent to you to verify your account"
+        message: "User created! An email has been sent to you to verify your account"
       });
     } catch (error) {
       return res.status(500).json({ status: 500, error: "Server Error" });

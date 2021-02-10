@@ -4,7 +4,7 @@ import PaymentController from "../controllers/payment";
 import Authentication from "../middleware/authenticate";
 
 const router = Router();
-const { verifyToken } = Authentication;
+const { verifyToken, verifyAdmin, verifyUserById } = Authentication;
 const {
   getAllPurchases, getPurchase, deletepurchase
 } = AdminPurchasesController;
@@ -17,6 +17,6 @@ router.get("/purchase/:id", getPurchase);
 router.get("/paystack/verify", verify);
 
 router.post("/paystack/initialize/:id", verifyToken, initialize);
-router.delete("/admin/weed/:id", verifyToken, deletepurchase);
+router.delete("/admin/purchase/:id", verifyToken, verifyUserById, verifyAdmin, deletepurchase);
 
 export default router;

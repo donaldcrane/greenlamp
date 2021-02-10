@@ -14,14 +14,5 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-  Weed.associate = models => {
-    Weed.hasMany(models.Purchases, {
-      as: "purchases",
-      foreignKey: "weedName",
-      onDelete: "cascade",
-      hooks: true,
-    });
-  };
-
   return Weed;
 };
