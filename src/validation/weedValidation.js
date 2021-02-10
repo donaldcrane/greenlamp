@@ -7,8 +7,9 @@ const validation = weed => {
         "any.required": "Sorry, Weed name is required.",
         "string.empty": "Weed name cannot be an empty field.",
       }),
-    imageUrl: Joi.string().empty()
+    imageUrl: Joi.string().empty().required()
       .messages({
+        "any.required": "Image is required.",
         "string.base": "Please provide a valid link",
         "string.empty": "Sorry, image Picture cannot be an empty field"
       }),

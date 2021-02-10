@@ -15,7 +15,7 @@ export default class AdminWeedController {
   static async addWeed(req, res) {
     try {
       const { name, imageUrl, pricePerQty } = req.body;
-      const { error } = validation({ name, imageUrl, pricePerQty });
+      const { error } = validation(req.body);
       if (error) {
         return res.status(400).json({ status: 400, error: error.message });
       }
@@ -112,7 +112,6 @@ export default class AdminWeedController {
       const {
         name, imageUrl, pricePerQty
       } = req.body;
-      console.log(req.body);
       const weed = await Admin.getWeed(id);
       if (!weed) return res.status(404).json({ status: 404, error: "weed not found" });
       let newname;

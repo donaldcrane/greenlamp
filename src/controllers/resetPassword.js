@@ -51,8 +51,6 @@ export default class {
       const { newPassword } = req.body;
       const user = await User.userExist(id);
       const verifyUser = verifyUserToken(token, user.password);
-      console.log(verifyUser);
-      // const verifyUser = jwt.verify(token, secret, user.password);
       if (!verifyUser) return res.status(410).json({ status: 410, error: "link has expired or has been used. please request for a  new link." });
       const hashedPassword = await bcrypt.hash(newPassword, 10);
       const newUserPassword = { password: hashedPassword };
