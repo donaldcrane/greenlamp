@@ -6,7 +6,7 @@ import {
   user2,
   user3
 } from "./user-sign-up-test-data";
-import sendGrid from "../../utilities/sendgrid";
+import sendGrid from "../../utilities/sendGrid";
 
 sendGrid.sandboxMode();
 chai.should();

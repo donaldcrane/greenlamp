@@ -21,7 +21,7 @@ describe("De-Activate a user", () => {
       .send(user4)
       .end((err, res) => {
         if (err) throw err;
-        adminToken = res.body.token;
+        adminToken = res.body.data;
         done();
       });
   });
@@ -33,7 +33,7 @@ describe("De-Activate a user", () => {
       .send(user7)
       .end((err, res) => {
         if (err) throw err;
-        userToken = res.body.token;
+        userToken = res.body.data;
         done();
       });
   });

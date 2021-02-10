@@ -1,8 +1,8 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
-import { user6, user7 } from "./user-sign-in-test-data";
+import { user4, user7 } from "./user-sign-in-test-data";
 import server from "../../app";
-import sendGrid from "../../utilities/sendgrid";
+import sendGrid from "../../utilities/sendGrid";
 
 sendGrid.sandboxMode();
 chai.should();
@@ -18,10 +18,10 @@ describe("Activate a user", () => {
       .request(server)
       .post("/api/v1/users/signin")
       .set("Accept", "application/json")
-      .send(user6)
+      .send(user4)
       .end((err, res) => {
         if (err) throw err;
-        adminToken = res.body.token;
+        adminToken = res.body.data;
         done();
       });
   });
@@ -33,7 +33,7 @@ describe("Activate a user", () => {
       .send(user7)
       .end((err, res) => {
         if (err) throw err;
-        userToken = res.body.token;
+        userToken = res.body.data;
         done();
       });
   });
