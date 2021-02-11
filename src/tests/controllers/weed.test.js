@@ -202,7 +202,7 @@ describe("Delete Weed", () => {
         done();
       });
   });
-  it("returns 404 when deleting tourist  which is not in db", done => {
+  it("returns 404 when deleting weed which is not in db", done => {
     chai
       .request(server)
       .delete("/api/v1/admin/weed/8d585465-cd80-4030-b665-bdc3bbd3e578")
@@ -252,7 +252,7 @@ describe("GET weed api route", () => {
       });
   });
 
-  it("returns tourist  with specific id", done => {
+  it("returns weed with specific id", done => {
     chai
       .request(server)
       .get("/api/v1/weed/54070e3b-8ea1-4267-818e-bdb489e2ace8")

@@ -9,3 +9,5 @@ import "./controllers/user-sign-in.test";
 import "./controllers/activate-user.test";
 import "./controllers/deactivate-user.test";
 import "./controllers/weed.test";
+import "./controllers/purchases.test";
+import "./controllers/paymenthistory.test";

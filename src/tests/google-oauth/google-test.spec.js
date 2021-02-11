@@ -1,7 +1,7 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
 import server from "../../app";
-import { newUser, user } from "./google-mock-data";
+import { newUser, user } from "./google-mock.data";
 
 chai.should();
 
