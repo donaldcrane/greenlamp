@@ -47,7 +47,7 @@ jobs:
         JWT_KEY: ${{ secrets.JWT_KEY }}
         COOKIE_KEY: ${{ secrets.COOKIE_KEY }}
         SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-        SENDGRID_EMAIL: ${{ SENDGRID_EMAIL }}
+        SENDGRID_EMAIL: ${{ secrets.SENDGRID_EMAIL }}
         GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
         GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
         GOOGLE_CALLBACK_URL_SIGNIN: ${{ secrets.GOOGLE_CALLBACK_URL_SIGNIN }}
