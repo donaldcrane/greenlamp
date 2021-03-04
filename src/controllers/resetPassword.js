@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 import jwtHelper from "../utilities/jwt";
 import User from "../services/user";
