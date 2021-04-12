@@ -20,8 +20,10 @@ export default class PaymentController {
       const { id } = req.params;
 
       const weedDetails = await Admin.getWeed(id);
+      console.log("weeddetails", weedDetails);
       if (!weedDetails) return res.status(404).json({ status: 404, error: "weed not found" });
       const subTotal = parseFloat(weedDetails.pricePerQty) * parseInt(quantity, 10);
+      console.log("subtotal", subTotal);
       const paystack_data = {
         amount: subTotal * 100,
         email: req.decoded.user.email,
