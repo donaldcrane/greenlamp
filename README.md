@@ -1,6 +1,8 @@
 # greenlamp
 A platform to purchase drugs online and also accepts user sign in with google  
 
+[![](https://img.shields.io/badge/Protected_by-Hound-a873d1.svg)](https://houndci.com)
+[![NodeJS CI](https://github.com/donaldcrane/greenlamp/actions/workflows/.node.js.yml/badge.svg)](https://github.com/donaldcrane/greenlamp/actions/workflows/.node.js.yml)
 [![Coverage Status](https://coveralls.io/repos/github/donaldcrane/greenlamp/badge.svg?branch=develop)](https://coveralls.io/github/donaldcrane/greenlamp?branch=develop)
 
 
